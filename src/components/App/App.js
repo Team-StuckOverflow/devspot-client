@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 
 import AuthenticatedRoute from '../AuthenticatedRoute/AuthenticatedRoute'
@@ -31,7 +31,7 @@ class App extends Component {
     const { msgAlerts, user } = this.state
 
     return (
-      <Fragment>
+      <React.Fragment>
         <Header user={user} />
         {msgAlerts.map((msgAlert, index) => (
           <AutoDismissAlert
@@ -55,7 +55,7 @@ class App extends Component {
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
-      </Fragment>
+      </React.Fragment>
     )
   }
 }
