@@ -18,6 +18,7 @@ class SignUp extends Component {
       lastname: '',
       city: '',
       state: '',
+      country: '',
       languages: '',
       years: '',
       role: '',

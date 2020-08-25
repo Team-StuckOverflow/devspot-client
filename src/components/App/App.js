@@ -9,6 +9,7 @@ import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 import Home from '../Home/Home'
+// import NewsFeed from '../NewsFeed/NewsFeed'
 
 class App extends Component {
   constructor () {
@@ -44,6 +45,7 @@ class App extends Component {
         ))}
         <main className="container">
           <Route exact path='/' component={Home} />
+
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
@@ -57,8 +59,9 @@ class App extends Component {
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/users' render={() => (
-            <Users user={user} />
+            {/* <Users user={user} */}
           )} />
+
         </main>
       </React.Fragment>
     )
