@@ -13,6 +13,16 @@ class SignUp extends Component {
 
     this.state = {
       email: '',
+      firstname: '',
+      lastname: '',
+      city: '',
+      state: '',
+      languages: '',
+      years: '',
+      role: '',
+      git: '',
+      linkedin: '',
+      image: '',
       password: '',
       passwordConfirmation: ''
     }
@@ -47,7 +57,7 @@ class SignUp extends Component {
   }
 
   render () {
-    const { email, password, passwordConfirmation } = this.state
+    const { email, password, passwordConfirmation, firstName, lastName, city, state, languages, role, years, gitHub, linkedIn, profilePicture } = this.state
 
     return (
       <div className="row">
@@ -65,6 +75,127 @@ class SignUp extends Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
+
+            <Form.Group controlId="firstName">
+              <Form.Label>First Name</Form.Label>
+              <Form.Control
+                required
+                name="firstName"
+                value={firstName}
+                type="text"
+                placeholder="First Name"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="lastName">
+              <Form.Label>Last Name</Form.Label>
+              <Form.Control
+                required
+                name="lastname"
+                value={lastName}
+                type="text"
+                placeholder="Last Name"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="city">
+              <Form.Label>City</Form.Label>
+              <Form.Control
+                required
+                name="city"
+                value={city}
+                type="text"
+                placeholder="City"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="state">
+              <Form.Label>State</Form.Label>
+              <Form.Control
+                required
+                name="city"
+                value={state}
+                type="text"
+                placeholder="State"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="languages">
+              <Form.Label>Languages</Form.Label>
+              <Form.Control
+                required
+                name="languages"
+                value={languages}
+                type="text"
+                placeholder="Languages"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="role">
+              <Form.Label>Role</Form.Label>
+              <Form.Control
+                required
+                name="role"
+                value={role}
+                type="text"
+                placeholder="Years in role"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="years">
+              <Form.Label>Years of Experience (code)</Form.Label>
+              <Form.Control
+                required
+                name="years"
+                value={years}
+                type="text"
+                placeholder="Years of experience"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="gitHub">
+              <Form.Label>GitHub</Form.Label>
+              <Form.Control
+                required
+                name="gitHub"
+                value={gitHub}
+                type="text"
+                placeholder="GitHub link"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="linkedIn">
+              <Form.Label>LinkedIn</Form.Label>
+              <Form.Control
+                required
+                name="linkedIn"
+                value={linkedIn}
+                type="text"
+                placeholder="LinkedIn link"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="profilePicture">
+              <Form.Label>Profile Picture</Form.Label>
+              <Form.Control
+                required
+                name="profilePicture"
+                value={profilePicture}
+                type="text"
+                placeholder="Link to profile picture"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+
             <Form.Group controlId="password">
               <Form.Label>Password</Form.Label>
               <Form.Control

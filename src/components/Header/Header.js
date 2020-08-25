@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-// import { withSnackbar } from 'react-simple-snackbar'
 
 const authenticatedOptions = (
   <Fragment>
