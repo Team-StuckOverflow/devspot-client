@@ -8,8 +8,12 @@ const authenticatedOptions = (
     <Nav.Link href="#change-password">Change Password</Nav.Link>
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
     <Nav.Link href="#users">Users</Nav.Link>
+<<<<<<< HEAD
     <Nav.Link href='#posts'>Show Posts</Nav.Link>
     <Nav.Link href="#user-info">Edit Profile</Nav.Link>
+=======
+    <Nav.Link to='/posts'>Show Posts</Nav.Link>
+>>>>>>> Add Posts component and link to Posts in Header
   </Fragment>
 )
 

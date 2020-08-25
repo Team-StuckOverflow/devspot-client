@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import { Container, Row, Col } from 'react-bootstrap'
+
 import { indexPosts } from '../../api/post'
 
 class Posts extends Component {

@@ -12,6 +12,7 @@ import Home from '../Home/Home'
 import Users from '../Users/Users'
 import User from '../Users/User'
 import UpdateProfile from '../Update/UpdateProfile'
+
 import Posts from '../Posts/Posts'
 
 class App extends Component {
