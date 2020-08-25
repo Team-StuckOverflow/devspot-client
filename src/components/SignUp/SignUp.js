@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import Dropdown from 'react-bootstrap/Dropdown'
 import { signUp, signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
 
@@ -57,7 +58,7 @@ class SignUp extends Component {
   }
 
   render () {
-    const { email, password, passwordConfirmation, firstName, lastName, city, state, languages, role, years, gitHub, linkedIn, profilePicture } = this.state
+    const { email, password, passwordConfirmation, firstName, lastName, city, state, languages, role, years, gitHub, linkedIn, profilePicture, country } = this.state
 
     return (
       <div className="row">
@@ -112,14 +113,20 @@ class SignUp extends Component {
               />
             </Form.Group>
 
-            <Form.Group controlId="state">
-              <Form.Label>State</Form.Label>
+            <DropdownButton id="dropdown-basic-button" title="US States" value={state}>
+              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+            </DropdownButton>
+
+            <Form.Group controlId="country">
+              <Form.Label>Country</Form.Label>
               <Form.Control
                 required
-                name="city"
-                value={state}
+                name="country"
+                value={country}
                 type="text"
-                placeholder="State"
+                placeholder="Country"
                 onChange={this.handleChange}
               />
             </Form.Group>
