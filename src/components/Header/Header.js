@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+// import { NavLink } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 
@@ -8,6 +9,7 @@ const authenticatedOptions = (
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
     <Nav.Link href="#users">Users</Nav.Link>
     <Nav.Link href="#user-info">Edit Profile</Nav.Link>
+    <Nav.Link to='/posts'>Show Posts</Nav.Link>
   </Fragment>
 )
 
