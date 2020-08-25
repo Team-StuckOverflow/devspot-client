@@ -114,9 +114,56 @@ class SignUp extends Component {
             </Form.Group>
 
             <DropdownButton id="dropdown-basic-button" title="US States" value={state}>
-              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+              <Dropdown.Item>Alabama</Dropdown.Item>
+              <Dropdown.Item>Alaska</Dropdown.Item>
+              <Dropdown.Item>Arizona</Dropdown.Item>
+              <Dropdown.Item>Arkansas</Dropdown.Item>
+              <Dropdown.Item>California</Dropdown.Item>
+              <Dropdown.Item>Colorado</Dropdown.Item>
+              <Dropdown.Item>Connecticut</Dropdown.Item>
+              <Dropdown.Item>Delaware</Dropdown.Item>
+              <Dropdown.Item>Florida</Dropdown.Item>
+              <Dropdown.Item>Georgia</Dropdown.Item>
+              <Dropdown.Item>Hawaii</Dropdown.Item>
+              <Dropdown.Item>Idaho</Dropdown.Item>
+              <Dropdown.Item>Illinois</Dropdown.Item>
+              <Dropdown.Item>Indiana</Dropdown.Item>
+              <Dropdown.Item>Iowa</Dropdown.Item>
+              <Dropdown.Item>Kansas</Dropdown.Item>
+              <Dropdown.Item>Kentucky</Dropdown.Item>
+              <Dropdown.Item>Louisiana</Dropdown.Item>
+              <Dropdown.Item>Maine</Dropdown.Item>
+              <Dropdown.Item>Maryland</Dropdown.Item>
+              <Dropdown.Item>Massachusetts</Dropdown.Item>
+              <Dropdown.Item>Michigan</Dropdown.Item>
+              <Dropdown.Item>Minnesota</Dropdown.Item>
+              <Dropdown.Item>Mississippi</Dropdown.Item>
+              <Dropdown.Item>Missouri</Dropdown.Item>
+              <Dropdown.Item>Montana</Dropdown.Item>
+              <Dropdown.Item>Nebraska</Dropdown.Item>
+              <Dropdown.Item>Nevada</Dropdown.Item>
+              <Dropdown.Item>New Hampshire</Dropdown.Item>
+              <Dropdown.Item>New Jersey</Dropdown.Item>
+              <Dropdown.Item>New Mexico</Dropdown.Item>
+              <Dropdown.Item>New York</Dropdown.Item>
+              <Dropdown.Item>North Carolina</Dropdown.Item>
+              <Dropdown.Item>North Dakota</Dropdown.Item>
+              <Dropdown.Item>Ohio</Dropdown.Item>
+              <Dropdown.Item>Oklahoma</Dropdown.Item>
+              <Dropdown.Item>Oregon</Dropdown.Item>
+              <Dropdown.Item>Pennsylvania</Dropdown.Item>
+              <Dropdown.Item>Rhode Island</Dropdown.Item>
+              <Dropdown.Item>South Carolina</Dropdown.Item>
+              <Dropdown.Item>South Dakota</Dropdown.Item>
+              <Dropdown.Item>Tenessee</Dropdown.Item>
+              <Dropdown.Item>Texas</Dropdown.Item>
+              <Dropdown.Item>Utah</Dropdown.Item>
+              <Dropdown.Item>Vermont</Dropdown.Item>
+              <Dropdown.Item>Virginia</Dropdown.Item>
+              <Dropdown.Item>Washington</Dropdown.Item>
+              <Dropdown.Item>West Virginia</Dropdown.Item>
+              <Dropdown.Item>Wisconsin</Dropdown.Item>
+              <Dropdown.Item>Wyoming</Dropdown.Item>
             </DropdownButton>
 
             <Form.Group controlId="country">
