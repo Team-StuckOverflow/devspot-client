@@ -10,6 +10,11 @@ export const getUser = ({ user }) => {
   return axios(apiUrl + '/users/' + user._id)
 }
 
+export const getUserForPost = id => {
+  console.log('this is the ID of the post\'s owner : ', id)
+  return axios(apiUrl + '/users/' + id)
+}
+
 export const indexPosts = user => {
   return axios({
     url: apiUrl + '/posts',
