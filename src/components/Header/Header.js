@@ -10,6 +10,7 @@ const authenticatedOptions = (
     <Nav.Link href="#users">Users</Nav.Link>
     <Nav.Link href="#user-info">Edit Profile</Nav.Link>
     <Nav.Link to='/posts'>Show Posts</Nav.Link>
+    <Nav.Link href='#posts'>Show Posts</Nav.Link>
   </Fragment>
 )
 

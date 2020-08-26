@@ -18,17 +18,21 @@ class Posts extends Component {
   }
 
   render () {
+    const { user } = this.props
+
     const posts = this.state.posts.map(post => (
-      <p key={post._id}>
+      <div key={post._id}>
         <Link to={`/posts/${post._id}`}>
-          {post.body}
+          <h4>{user.username} <span className=''>{user.firstName} {user.lastName}</span></h4>
+          <p>{post.body}</p>
         </Link>
-      </p>
+      </div>
     ))
     console.log(posts)
 
     return (
       <div>
+        <h2>News Feed</h2>
         {posts}
       </div>
     )
