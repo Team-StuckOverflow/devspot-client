@@ -9,7 +9,9 @@ import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 import Home from '../Home/Home'
-let Users
+import Users from '../Users/Users'
+import User from '../Users/User'
+
 class App extends Component {
   constructor () {
     super()
@@ -56,8 +58,11 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/users' render={() => (
-            <Users user={user} />
+          <AuthenticatedRoute user={user} exact path='/users' render={() => (
+            <Users user={user}/>
+          )} />
+          <AuthenticatedRoute user={user} exact path='/users/:id' render={() => (
+            <User user={user} />
           )} />
         </main>
       </React.Fragment>
