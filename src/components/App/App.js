@@ -15,6 +15,7 @@ import UpdateProfile from '../Update/UpdateProfile'
 
 import Posts from '../Posts/Posts'
 import PostCreate from '../PostCreate/PostCreate'
+import UpdateProfile from '../Update/UpdateProfile'
 
 class App extends Component {
   constructor () {
@@ -56,6 +57,12 @@ class App extends Component {
 
           <Route exact path='/' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
+          )} />
+
+          <Route exact path='/' component={Home} />
+
+          <Route path='/user-info' user={user} render={() => (
+            <UpdateProfile msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
 
           <Route path='/sign-up' render={() => (
