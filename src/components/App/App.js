@@ -11,6 +11,7 @@ import ChangePassword from '../ChangePassword/ChangePassword'
 import Home from '../Home/Home'
 import Users from '../Users/Users'
 import User from '../Users/User'
+import Posts from '../Posts/Posts'
 
 class App extends Component {
   constructor () {
@@ -64,6 +65,9 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/users/:id' render={() => (
             <User user={user} />
           )} />
+          <AuthenticatedRoute user={user} path='/posts' render={() => (
+            <Posts user={user}/>
+          )}/>
         </main>
       </React.Fragment>
     )
