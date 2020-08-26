@@ -11,6 +11,7 @@ import ChangePassword from '../ChangePassword/ChangePassword'
 import Home from '../Home/Home'
 import Users from '../Users/Users'
 import User from '../Users/User'
+import UpdateProfile from '../Update/UpdateProfile'
 
 class App extends Component {
   constructor () {
@@ -46,6 +47,11 @@ class App extends Component {
         ))}
         <main className="container">
           <Route exact path='/' component={Home} />
+
+          <Route path='/user-info' user={user} render={() => (
+            <UpdateProfile msgAlert={this.msgAlert} setUser={this.setUser} />
+          )} />
+
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
