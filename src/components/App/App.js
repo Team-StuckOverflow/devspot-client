@@ -13,6 +13,7 @@ import Users from '../Users/Users'
 import User from '../Users/User'
 import UpdateProfile from '../Update/UpdateProfile'
 import Posts from '../Posts/Posts'
+import UpdateProfile from '../Update/UpdateProfile'
 
 class App extends Component {
   constructor () {
