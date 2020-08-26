@@ -8,8 +8,22 @@ export const signUp = credentials => {
     data: {
       credentials: {
         email: credentials.email,
+        username: credentials.username,
         password: credentials.password,
         password_confirmation: credentials.passwordConfirmation
+      },
+      userInfo: {
+        firstName: credentials.firstName,
+        lastName: credentials.lastName,
+        city: credentials.city,
+        state: credentials.state,
+        country: credentials.country,
+        languages: credentials.languages,
+        yearsOfExp: credentials.yearsOfExp,
+        role: credentials.role,
+        gitHub: credentials.gitHub,
+        linkedIn: credentials.linkedIn,
+        proPic: credentials.proPic
       }
     }
   })

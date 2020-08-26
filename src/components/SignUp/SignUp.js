@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import Dropdown from 'react-bootstrap/Dropdown'
+// import DropdownButton from 'react-bootstrap/DropdownButton'
+// import Dropdown from 'react-bootstrap/Dropdown'
 import { signUp, signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
 
@@ -14,16 +14,18 @@ class SignUp extends Component {
 
     this.state = {
       email: '',
-      firstname: '',
-      lastname: '',
+      firstName: '',
+      lastName: '',
+      username: '',
       city: '',
       state: '',
+      country: '',
       languages: '',
-      years: '',
+      yearsOfExp: '',
       role: '',
-      git: '',
-      linkedin: '',
-      image: '',
+      gitHub: '',
+      linkedIn: '',
+      proPic: '',
       password: '',
       passwordConfirmation: ''
     }
@@ -58,8 +60,8 @@ class SignUp extends Component {
   }
 
   render () {
-    const { email, password, passwordConfirmation, firstName, lastName, city, state, languages, role, years, gitHub, linkedIn, profilePicture, country } = this.state
-
+    const { email, password, passwordConfirmation, firstName, lastName, username, city, state, languages, role, yearsOfExp, gitHub, linkedIn, proPic, country } = this.state
+    console.log(this.state)
     return (
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
@@ -93,10 +95,22 @@ class SignUp extends Component {
               <Form.Label>Last Name</Form.Label>
               <Form.Control
                 required
-                name="lastname"
+                name="lastName"
                 value={lastName}
                 type="text"
                 placeholder="Last Name"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="username">
+              <Form.Label>Username</Form.Label>
+              <Form.Control
+                required
+                name="username"
+                value={username}
+                type="text"
+                placeholder="Username"
                 onChange={this.handleChange}
               />
             </Form.Group>
@@ -113,58 +127,62 @@ class SignUp extends Component {
               />
             </Form.Group>
 
-            <DropdownButton id="dropdown-basic-button" title="US States" value={state}>
-              <Dropdown.Item>Alabama</Dropdown.Item>
-              <Dropdown.Item>Alaska</Dropdown.Item>
-              <Dropdown.Item>Arizona</Dropdown.Item>
-              <Dropdown.Item>Arkansas</Dropdown.Item>
-              <Dropdown.Item>California</Dropdown.Item>
-              <Dropdown.Item>Colorado</Dropdown.Item>
-              <Dropdown.Item>Connecticut</Dropdown.Item>
-              <Dropdown.Item>Delaware</Dropdown.Item>
-              <Dropdown.Item>Florida</Dropdown.Item>
-              <Dropdown.Item>Georgia</Dropdown.Item>
-              <Dropdown.Item>Hawaii</Dropdown.Item>
-              <Dropdown.Item>Idaho</Dropdown.Item>
-              <Dropdown.Item>Illinois</Dropdown.Item>
-              <Dropdown.Item>Indiana</Dropdown.Item>
-              <Dropdown.Item>Iowa</Dropdown.Item>
-              <Dropdown.Item>Kansas</Dropdown.Item>
-              <Dropdown.Item>Kentucky</Dropdown.Item>
-              <Dropdown.Item>Louisiana</Dropdown.Item>
-              <Dropdown.Item>Maine</Dropdown.Item>
-              <Dropdown.Item>Maryland</Dropdown.Item>
-              <Dropdown.Item>Massachusetts</Dropdown.Item>
-              <Dropdown.Item>Michigan</Dropdown.Item>
-              <Dropdown.Item>Minnesota</Dropdown.Item>
-              <Dropdown.Item>Mississippi</Dropdown.Item>
-              <Dropdown.Item>Missouri</Dropdown.Item>
-              <Dropdown.Item>Montana</Dropdown.Item>
-              <Dropdown.Item>Nebraska</Dropdown.Item>
-              <Dropdown.Item>Nevada</Dropdown.Item>
-              <Dropdown.Item>New Hampshire</Dropdown.Item>
-              <Dropdown.Item>New Jersey</Dropdown.Item>
-              <Dropdown.Item>New Mexico</Dropdown.Item>
-              <Dropdown.Item>New York</Dropdown.Item>
-              <Dropdown.Item>North Carolina</Dropdown.Item>
-              <Dropdown.Item>North Dakota</Dropdown.Item>
-              <Dropdown.Item>Ohio</Dropdown.Item>
-              <Dropdown.Item>Oklahoma</Dropdown.Item>
-              <Dropdown.Item>Oregon</Dropdown.Item>
-              <Dropdown.Item>Pennsylvania</Dropdown.Item>
-              <Dropdown.Item>Rhode Island</Dropdown.Item>
-              <Dropdown.Item>South Carolina</Dropdown.Item>
-              <Dropdown.Item>South Dakota</Dropdown.Item>
-              <Dropdown.Item>Tenessee</Dropdown.Item>
-              <Dropdown.Item>Texas</Dropdown.Item>
-              <Dropdown.Item>Utah</Dropdown.Item>
-              <Dropdown.Item>Vermont</Dropdown.Item>
-              <Dropdown.Item>Virginia</Dropdown.Item>
-              <Dropdown.Item>Washington</Dropdown.Item>
-              <Dropdown.Item>West Virginia</Dropdown.Item>
-              <Dropdown.Item>Wisconsin</Dropdown.Item>
-              <Dropdown.Item>Wyoming</Dropdown.Item>
-            </DropdownButton>
+            <Form.Group controlId="state">
+              <select title="US States" value={state} onChange={this.handleChange}
+                name="state"
+                required>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="">Connecticut</option>
+                <option value="">Delaware</option>
+                <option value="FL">Florida</option>
+                <option value="">Georgia</option>
+                <option value="">Hawaii</option>
+                <option value="">Idaho</option>
+                <option value="">Illinois</option>
+                <option value="">Indiana</option>
+                <option value="">Iowa</option>
+                <option value="">Kansas</option>
+                <option value="">Kentucky</option>
+                <option value="">Louisiana</option>
+                <option value="">Maine</option>
+                <option value="">Maryland</option>
+                <option value="">Massachusetts</option>
+                <option value="">Michigan</option>
+                <option value="">Minnesota</option>
+                <option value="">Mississippi</option>
+                <option value="">Missouri</option>
+                <option value="">Montana</option>
+                <option value="">Nebraska</option>
+                <option value="">Nevada</option>
+                <option value="">New Hampshire</option>
+                <option value="">New Jersey</option>
+                <option value="">New Mexico</option>
+                <option value="">New York</option>
+                <option value="">North Carolina</option>
+                <option value="">North Dakota</option>
+                <option value="">Ohio</option>
+                <option value="">Oklahoma</option>
+                <option value="">Oregon</option>
+                <option value="">Pennsylvania</option>
+                <option value="">Rhode Island</option>
+                <option value="">South Carolina</option>
+                <option value="">South Dakota</option>
+                <option value="">Tenessee</option>
+                <option value="">Texas</option>
+                <option value="">Utah</option>
+                <option value="">Vermont</option>
+                <option value="">Virginia</option>
+                <option value="">Washington</option>
+                <option value="">West Virginia</option>
+                <option value="">Wisconsin</option>
+                <option value="">Wyoming</option>
+              </select>
+            </Form.Group>
 
             <Form.Group controlId="country">
               <Form.Label>Country</Form.Label>
@@ -202,12 +220,12 @@ class SignUp extends Component {
               />
             </Form.Group>
 
-            <Form.Group controlId="years">
+            <Form.Group controlId="yearsOfExp">
               <Form.Label>Years of Experience (code)</Form.Label>
               <Form.Control
                 required
-                name="years"
-                value={years}
+                name="yearsOfExp"
+                value={yearsOfExp}
                 type="text"
                 placeholder="Years of experience"
                 onChange={this.handleChange}
@@ -238,12 +256,12 @@ class SignUp extends Component {
               />
             </Form.Group>
 
-            <Form.Group controlId="profilePicture">
+            <Form.Group controlId="proPic">
               <Form.Label>Profile Picture</Form.Label>
               <Form.Control
                 required
-                name="profilePicture"
-                value={profilePicture}
+                name="proPic"
+                value={proPic}
                 type="text"
                 placeholder="Link to profile picture"
                 onChange={this.handleChange}
