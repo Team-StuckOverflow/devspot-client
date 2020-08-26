@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
+import { Container, Row, Col } from 'react-bootstrap'
 import { indexPosts } from '../../api/post'
 
 class Posts extends Component {
@@ -18,14 +19,24 @@ class Posts extends Component {
   }
 
   render () {
+    const postsStyling = {
+      border: '1px solid black'
+    }
+
     const posts = this.state.posts.map(post => (
-      <div key={post._id}>
-        <Link to={`/posts/${post._id}`}>
-          <img src={post.owner.proPic} alt="proPic"/>
-          <p>{post.owner.firstName} {post.owner.lastName} <span className='username'>@{post.owner.username}</span></p>
-          <p>{post.body}</p>
-        </Link>
-      </div>
+      <Link to={`/posts/${post._id}`} key={post._id}>
+        <Container style={postsStyling}>
+          <Row>
+            <Col xs={2}>
+              <img src={post.owner.proPic} width='100' alt="proPic"/>
+            </Col>
+            <Col>
+              <p>{post.owner.firstName} {post.owner.lastName} <span className='username'>@{post.owner.username}</span></p>
+              <p>{post.body}</p>
+            </Col>
+          </Row>
+        </Container>
+      </Link>
     ))
 
     return (
