@@ -28,7 +28,7 @@ class Posts extends Component {
 
     const posts = this.state.posts.map(post => (
       <Link to={`/posts/${post._id}`} key={post._id}>
-        <Container style={postsStyling} className='pb-5'>
+        <Container style={postsStyling} className='post-hover pb-5'>
           <Row>
             <Col xs={2}>
               <img src={post.owner.proPic} width='75' alt="proPic"/>

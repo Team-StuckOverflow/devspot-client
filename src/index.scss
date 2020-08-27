@@ -2,8 +2,24 @@
 
 main {
   background-color: #2C1553;
+  color: white;
+  width: 100vw;
+  height: 100vh;
 }
 
 #posts-dropdown {
   float: right;
+}
+
+#root {
+  background-color: #2C1553;
+  color: white;
+}
+
+.navbar {
+  color: white !important;
+}
+
+.post-hover:hover {
+  background-color: #462281;
 }

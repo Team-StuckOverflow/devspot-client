@@ -38,7 +38,7 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <Header user={user} />
+        <Header className='navbar' user={user} />
         {msgAlerts.map((msgAlert, index) => (
           <AutoDismissAlert
             key={index}
