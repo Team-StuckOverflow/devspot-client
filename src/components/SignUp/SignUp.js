@@ -31,11 +31,11 @@ class SignUp extends Component {
     [event.target.name]: event.target.value
   })
 
-  onSignUp = event => {
+  handleSubmit = event => {
     event.preventDefault()
 
     const { msgAlert, history, setUser } = this.props
-
+    console.log(setUser)
     signUp(this.state)
       .then(() => signIn(this.state))
       .then(res => setUser(res.data.user))
@@ -56,7 +56,7 @@ class SignUp extends Component {
   }
 
   render () {
-    const { handleChange, onSignUp } = this
+    const { handleChange, handleSubmit } = this
     const { email, password, passwordConfirmation, firstName, lastName, username, city, state, languages, role, yearsOfExp, gitHub, linkedIn, proPic, country } = this.state
     return (
       <SignUpForm
@@ -76,7 +76,7 @@ class SignUp extends Component {
         proPic={proPic}
         country={country}
         handleChange={handleChange}
-        onSignUp={onSignUp}
+        handleSubmit={handleSubmit}
       />
     )
   }

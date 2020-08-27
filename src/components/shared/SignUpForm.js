@@ -4,14 +4,18 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 <<<<<<< HEAD
 
+<<<<<<< HEAD
 const SignUpForm = ({ handleChange, cancelPath, email, password, passwordConfirmation, firstName, lastName, username, city, state, languages, role, yearsOfExp, gitHub, linkedIn, proPic, country, onSignUp }) => (
 =======
 // import SignUp from '../SignUp/SignUp'
 const SignUpForm = ({ handleSubmit, handleChange, cancelPath, email, password, passwordConfirmation, firstName, lastName, username, city, state, languages, role, yearsOfExp, gitHub, linkedIn, proPic, country, onSignUp }) => (
 >>>>>>> Partially worked on update and refactoring broke sign-up
+=======
+const SignUpForm = ({ handleChange, cancelPath, email, password, passwordConfirmation, firstName, lastName, username, city, state, languages, role, yearsOfExp, gitHub, linkedIn, proPic, country, handleSubmit }) => (
+>>>>>>> Made separate form for update, render update route in app.js
   <div className="row">
     <div className="col-sm-10 col-md-8 mx-auto mt-5">
-      <Form onSubmit={onSignUp}>
+      <Form onSubmit={handleSubmit}>
         <Form.Group controlId="email">
           <Form.Label>Email address</Form.Label>
           <Form.Control
