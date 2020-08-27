@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import { Container, Row, Col, DropdownButton, Dropdown, ButtonGroup } from 'react-bootstrap'
-import { indexPosts } from '../../api/post'
+import { indexPosts, deletePost } from '../../api/post'
 
 class Posts extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      posts: []
+      posts: [],
+      delete: false
     }
   }
 
@@ -17,6 +18,10 @@ class Posts extends Component {
       .then(res => this.setState({ posts: res.data.posts }))
       .catch(console.error)
   }
+
+  // deletePost (this.props.user)
+  //   .then(() => this.setState({ deleted: true }))
+  //   .catch(console.error)
 
   render () {
     const postsStyling = {
@@ -27,7 +32,7 @@ class Posts extends Component {
 
     const posts = this.state.posts.map(post => (
       <Link to={`/posts/${post._id}`} key={post._id}>
-        <Container style={postsStyling} className='post-hover pb-5'>
+        <Container style={postsStyling} className='post-hover pb-5 pt-2'>
           <Row>
             <Col xs={2}>
               <img src={post.owner.proPic} width='75' alt="proPic"/>
@@ -44,7 +49,7 @@ class Posts extends Component {
                     title=""
                   >
                     <Dropdown.Item eventKey="1">Edit</Dropdown.Item>
-                    <Dropdown.Item eventKey="2">Delete</Dropdown.Item>
+                    <Dropdown.Item onClick={this.deletePost} eventKey="2">Delete</Dropdown.Item>
                   </DropdownButton>
                 </div>
                 : null }

@@ -23,3 +23,10 @@ export const indexPosts = user => {
     }
   })
 }
+
+export const deletePost = user => {
+  return axios({
+    url: `${apiUrl}/books/${this.props.match.params.id}`,
+    method: 'DELETE'
+  })
+}
