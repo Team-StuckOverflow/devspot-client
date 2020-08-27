@@ -9,19 +9,25 @@ class Posts extends Component {
 
     this.state = {
       posts: [],
-      delete: false
+      deleted: false
     }
   }
 
   componentDidMount () {
     indexPosts(this.props.user)
-      .then(res => this.setState({ posts: res.data.posts }))
+      .then(res => this.setState({ posts: res.data.posts.reverse() }))
       .catch(console.error)
   }
 
-  // deletePost (this.props.user)
-  //   .then(() => this.setState({ deleted: true }))
-  //   .catch(console.error)
+  onDeletePost = event => {
+    deletePost(this.props.user, event.target.dataset.postid)
+      // After successful delete, call another index request to re-render posts
+      .then(() => indexPosts(this.props.user)
+        .then(res => this.setState({ posts: res.data.posts.reverse() }))
+        .catch(console.error)
+      )
+      .catch(console.error)
+  }
 
   render () {
     const postsStyling = {
@@ -49,7 +55,7 @@ class Posts extends Component {
                     title=""
                   >
                     <Dropdown.Item eventKey="1">Edit</Dropdown.Item>
-                    <Dropdown.Item onClick={this.deletePost} eventKey="2">Delete</Dropdown.Item>
+                    <Dropdown.Item onClick={this.onDeletePost} data-postid={post._id} eventKey="2">Delete</Dropdown.Item>
                   </DropdownButton>
                 </div>
                 : null }

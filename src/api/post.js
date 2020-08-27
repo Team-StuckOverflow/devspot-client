@@ -24,9 +24,12 @@ export const indexPosts = user => {
   })
 }
 
-export const deletePost = user => {
+export const deletePost = (user, postId) => {
   return axios({
-    url: `${apiUrl}/books/${this.props.match.params.id}`,
-    method: 'DELETE'
+    url: `${apiUrl}/posts/${postId}`,
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Token token=${user.token}`
+    }
   })
 }
