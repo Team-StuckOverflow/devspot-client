@@ -56,15 +56,23 @@ class PostCreate extends Component {
   handleSubmit = event => {
     // prevent the page from refreshing
     event.preventDefault()
+<<<<<<< HEAD
     console.log(this.props)
+=======
+
+>>>>>>> 35b02ad... updates by azam
     axios({
       url: `${apiUrl}/posts`,
       method: 'POST',
       // send the new value for our post, which comes from `this.state`
+<<<<<<< HEAD
       data: { post: this.state.post },
       headers: {
         'Authorization': `Token token=${this.props.user.token}`
       }
+=======
+      data: { post: this.state.post }
+>>>>>>> 35b02ad... updates by azam
     })
       // if we succesfully created the post, set the `createdId` state to the id
       // of the post we got back in the response's data
