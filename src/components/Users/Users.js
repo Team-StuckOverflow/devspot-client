@@ -28,16 +28,18 @@ class Users extends Component {
 
   render () {
     const users = this.state.users.map(user => (
-      <div key={user._id} className="col-3">
-        <Card style={{ width: '18rem' }}>
+      <div key={user._id} className="col-3 d-flex align-items-stretch">
+        <Card className="card-color" style={{ width: '18rem' }}>
           <Card.Img variant="top" src={user.proPic} />
           <Card.Body>
-            <Card.Title>{user.username}</Card.Title>
+            <Card.Title>@{user.username}</Card.Title>
             <Card.Text>
-              Example text
+              <p>{user.firstName} {user.lastName}</p>
+              <p>Current Role: {user.role}</p>
+              <p>Experience (Years): {user.yearsOfExp}</p>
             </Card.Text>
             <Link to={`/users/${user._id}`}>
-              <Button variant="primary">Go somewhere</Button>
+              <Button variant="primary">See Profile</Button>
             </Link>
           </Card.Body>
         </Card>
@@ -51,7 +53,7 @@ class Users extends Component {
       <div>
         <h5>Users</h5>
         <div style={userCard} className="container">
-          <div className="row">
+          <div style={userCard} className="row">
             {users}
           </div>
         </div>

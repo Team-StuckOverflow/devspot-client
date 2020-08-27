@@ -6,7 +6,6 @@ export const getUsers = () => {
 }
 
 export const getUser = (id) => {
-  console.log('this is state ', id)
   return axios(apiUrl + '/users/' + id)
 }
 
