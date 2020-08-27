@@ -5,7 +5,7 @@ const profile = {
 }
 
 const userInfo = {
-  color: 'grey'
+  color: 'white'
 }
 
 const link = {
@@ -16,9 +16,15 @@ const userCard = {
   height: '50px'
 }
 
+const newsFeed = {
+  color: 'white',
+  margin: '10px'
+}
+
 export default {
   profile,
   userInfo,
   link,
-  userCard
+  userCard,
+  newsFeed
 }
