@@ -5,8 +5,8 @@ import messages from '../AutoDismissAlert/messages'
 import SignUpForm from '../shared/SignUpForm'
 
 class SignUp extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
 
     this.state = {
       email: '',
@@ -44,7 +44,7 @@ class SignUp extends Component {
         message: messages.signUpSuccess,
         variant: 'success'
       }))
-      .then(() => history.push('/'))
+      .then(() => history.push('/sign-in'))
       .catch(error => {
         this.setState({ email: '', password: '', passwordConfirmation: '', firstName: '', lastName: '', username: '', city: '', state: '', country: '', languages: '', yearsOfExp: '', role: '', gitHub: '', linkedIn: '', proPic: '' })
         msgAlert({
