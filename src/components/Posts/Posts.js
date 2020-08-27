@@ -86,9 +86,9 @@ class Posts extends Component {
     const { handleClose, handleShow, handleChange, onEditPost, onDeletePost } = this
     const { editedPost } = this.state
     const postsStyling = {
+      border: '1px solid gray',
       width: '600px',
-      color: 'white',
-      border: '1px solid black'
+      color: 'white'
     }
 
     const posts = this.state.posts.map(post => (
@@ -114,11 +114,7 @@ class Posts extends Component {
                   </DropdownButton>
                 </div>
                 : null }
-            </Col>
-            <div>{post.body}</div>
-            <Col width="100%">
-              <p>{post.owner.firstName} {post.owner.lastName} <span className='username'>@{post.owner.username}</span></p>
-              <p>{post.body}</p>
+              <div>{post.body}</div>
             </Col>
           </Row>
         </Container>
