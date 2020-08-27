@@ -56,7 +56,7 @@ class SignUp extends Component {
   }
 
   render () {
-    const { handleChange, handleSubmit } = this
+    const { handleChange, onSignUp } = this
     const { email, password, passwordConfirmation, firstName, lastName, username, city, state, languages, role, yearsOfExp, gitHub, linkedIn, proPic, country } = this.state
     return (
       <SignUpForm
@@ -76,7 +76,7 @@ class SignUp extends Component {
         proPic={proPic}
         country={country}
         handleChange={handleChange}
-        handleSubmit={handleSubmit}
+        onSignUp={onSignUp}
       />
     )
   }

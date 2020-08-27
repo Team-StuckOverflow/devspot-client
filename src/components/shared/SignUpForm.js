@@ -2,8 +2,8 @@ import React from 'react'
 import { withRouter } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-// import SignUp from '../SignUp/SignUp'
-const SignUpForm = ({ handleSubmit, handleChange, cancelPath, email, password, passwordConfirmation, firstName, lastName, username, city, state, languages, role, yearsOfExp, gitHub, linkedIn, proPic, country, onSignUp }) => (
+
+const SignUpForm = ({ handleChange, cancelPath, email, password, passwordConfirmation, firstName, lastName, username, city, state, languages, role, yearsOfExp, gitHub, linkedIn, proPic, country, onSignUp }) => (
   <div className="row">
     <div className="col-sm-10 col-md-8 mx-auto mt-5">
       <Form onSubmit={onSignUp}>
@@ -219,6 +219,7 @@ const SignUpForm = ({ handleSubmit, handleChange, cancelPath, email, password, p
             onChange={handleChange}
           />
         </Form.Group>
+
         <Form.Group controlId="passwordConfirmation">
           <Form.Label>Password Confirmation</Form.Label>
           <Form.Control
