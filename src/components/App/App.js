@@ -14,6 +14,7 @@ import User from '../Users/User'
 import UpdateProfile from '../Update/UpdateProfile'
 
 import Posts from '../Posts/Posts'
+import PostCreate from '../PostCreate/PostCreate'
 
 class App extends Component {
   constructor () {
@@ -74,6 +75,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/posts' render={() => (
             <Posts user={user}/>
+          )}/>
+          <AuthenticatedRoute exact path='/post-create' user={user} render={() => (
+            <PostCreate user={user}/>
           )}/>
         </main>
       </React.Fragment>
