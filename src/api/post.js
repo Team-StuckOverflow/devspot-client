@@ -9,11 +9,6 @@ export const getUser = (id) => {
   return axios(apiUrl + '/users/' + id)
 }
 
-export const getUserForPost = id => {
-  console.log('this is the ID of the post\'s owner : ', id)
-  return axios(apiUrl + '/users/' + id)
-}
-
 export const indexPosts = user => {
   return axios({
     url: apiUrl + '/posts',
@@ -28,6 +23,20 @@ export const deletePost = (user, postId) => {
   return axios({
     url: `${apiUrl}/posts/${postId}`,
     method: 'DELETE',
+    headers: {
+      'Authorization': `Token token=${user.token}`
+    }
+  })
+}
+
+export const editPost = (user, postId, editedPost) => {
+  return axios({
+    url: `${apiUrl}/posts/${postId}`,
+    method: 'PATCH',
+    data: { post: {
+      body: editedPost
+    }
+    },
     headers: {
       'Authorization': `Token token=${user.token}`
     }
