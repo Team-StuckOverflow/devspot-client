@@ -65,7 +65,11 @@ class User extends Component {
             </div>
           </div>
           <div className="row" style={newsFeed}>
+<<<<<<< HEAD
             <UserPosts style={{ width: '100%' }} user={this.props.user} userId={user._id} />
+=======
+            { this.props.user._id === user._id ? <Posts style={{ width: '100%' }} user={this.props.user} /> : 'You have\'t made any posts yet!' }
+>>>>>>> 2444cc4... Update styling for User & Users component
           </div>
         </div>
       </div>

@@ -21,9 +21,9 @@ class Posts extends Component {
 
   render () {
     const postsStyling = {
-      border: '1px solid gray',
       width: '600px',
-      color: 'white'
+      color: 'white',
+      border: '1px solid black'
     }
 
     const posts = this.state.posts.map(post => (
@@ -49,7 +49,11 @@ class Posts extends Component {
                   </DropdownButton>
                 </div>
                 : null }
-              <div>{post.body}</div>
+            </Col>
+            <div>{post.body}</div>
+            <Col width="100%">
+              <p>{post.owner.firstName} {post.owner.lastName} <span className='username'>@{post.owner.username}</span></p>
+              <p>{post.body}</p>
             </Col>
           </Row>
         </Container>
