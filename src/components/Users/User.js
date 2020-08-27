@@ -1,47 +1,75 @@
 import React, { Component } from 'react'
 import { getUser } from '../../api/post'
 import { withRouter } from 'react-router-dom'
+import Image from 'react-bootstrap/Image'
+import styles from './user.css.js'
+import UserPosts from '../Posts/UserPosts.js'
+
+const profile = {
+  border: styles.profile.border,
+  margin: styles.profile.margin,
+  padding: styles.profile.padding
+}
+
+const link = {
+  margin: styles.link.margin
+}
+
+const userInfo = {
+  color: styles.userInfo.color
+}
+
+const newsFeed = {
+  margin: styles.newsFeed.margin
+}
 
 class User extends Component {
   constructor (props) {
     super(props)
+
+    console.log('these are the props ', props)
 
     this.state = {
       user: ''
     }
   }
 
-  componentDidMount (props) {
-    // need to pass the user to getUser
-    getUser(this.props)
+  componentDidMount () {
+    getUser(this.props.match.params.id)
       .then(res => this.setState({ user: res.data.user }))
       .catch(console.error)
   }
 
   render () {
     const { user } = this.state
-    if (user.active === null) {
-      return <p>Loading...</p>
-    }
 
+    console.log()
     return (
       <div>
-        <h4>{user.username}</h4>
-        <h6>{user.firstName}</h6>
-        <h6>{user.languages}</h6>
-        <h6>{user.city}</h6>
-        <a href={user.linkedIn}>LinkedIn</a>
-        <a href={user.gitHub}>GitHub</a>
+        <div className="container" style={profile}>
+          <div className="row">
+            <div className="col-1">
+              <Image src={user.proPic} width="100" height="100" roundedCircle/>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-9" style={userInfo}>
+              <h4>{user.firstName} {user.lastName}</h4>
+              <h6>@{user.username}</h6>
+              <h6>Languages: {user.languages}</h6>
+              <h6>Current Position: {user.role}</h6>
+              <h6>Years of Experience: {user.yearsOfExp}</h6>
+              <h6>City: {user.city}</h6>
+              <a style={link} href={user.linkedIn}>LinkedIn</a>
+              <a style={link} href={user.gitHub}>GitHub</a>
+            </div>
+          </div>
+          <div className="row" style={newsFeed}>
+            <UserPosts user={this.props.user} userId={user._id} />
+          </div>
+        </div>
       </div>
     )
-    // const { user } = this.state
-    // console.log('this is user ', user)
-    // if (user.active === true) {
-    //   return (
-    //     <div>
-    //       <h4>{user}</h4>
-    //     </div>
-    // )
   }
 }
 

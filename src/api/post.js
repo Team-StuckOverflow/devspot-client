@@ -5,9 +5,8 @@ export const getUsers = () => {
   return axios(apiUrl + '/users')
 }
 
-export const getUser = ({ user }) => {
-  console.log('this is user ', user)
-  return axios(apiUrl + '/users/' + user._id)
+export const getUser = (id) => {
+  return axios(apiUrl + '/users/' + id)
 }
 
 export const getUserForPost = id => {
