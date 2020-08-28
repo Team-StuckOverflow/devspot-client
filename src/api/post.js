@@ -19,18 +19,3 @@ export const indexPosts = user => {
     }
   })
 }
-
-export const getUserForPost = id => {
-  console.log('this is the ID of the post\'s owner : ', id)
-  return axios(apiUrl + '/users/' + id)
-}
-
-export const indexPosts = user => {
-  return axios({
-    url: apiUrl + '/posts',
-    method: 'GET',
-    headers: {
-      'Authorization': `Token token=${user.token}`
-    }
-  })
-}

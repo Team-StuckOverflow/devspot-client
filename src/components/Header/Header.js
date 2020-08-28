@@ -9,10 +9,7 @@ const authenticatedOptions = (
     <Nav.Link className='navbar' href="#users">Users</Nav.Link>
     <Nav.Link className='navbar' href='#posts'>Show Posts</Nav.Link>
     <Nav.Link className='navbar' href="#post-create">New Post</Nav.Link>
-    <Nav.Link href="#user-info">Edit Profile</Nav.Link>
-    <Nav.Link to='/posts'>Show Posts</Nav.Link>
-    <Nav.Link href='#posts'>Show Posts</Nav.Link>
-    <Nav.Link href="#user/edit-profile">Edit Profile</Nav.Link>
+    <Nav.Link className='navbar' href="#user/edit-profile">Edit Profile</Nav.Link>
   </Fragment>
 )
 
