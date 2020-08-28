@@ -1,1 +1,51 @@
 @import '~bootstrap/scss/bootstrap';
+
+main {
+  color: white;
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  background-color: #2C1553;
+}
+
+#posts-dropdown {
+  float: right;
+}
+
+#root {
+  background-color: #2C1553;
+  color: white;
+  width: 100%;
+  height: 100%;
+}
+
+.navbar {
+  color: white !important;
+}
+
+.post-hover:hover {
+  background-color: #462281;
+}
+
+.card-color {
+  background-color: #462281;
+  margin: 10px;
+}
+
+// .tweetBox {
+//  padding-bottom: 10px;
+//  border-bottom: 8px solid var(--twitter-background);
+//  padding-right: 10px;
+// }
+
+.modal-content {
+  display: flex;
+  align-content: center;
+  justify: center;
+}
+
+.modal-header {
+  text-align: center;
+}
