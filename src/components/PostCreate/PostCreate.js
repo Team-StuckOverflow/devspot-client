@@ -16,10 +16,7 @@ class PostCreate extends Component {
       post: {
         // set the default body to empty strings
         body: ''
-      },
-      // Initially, the post has not been created, when it has been created, we will
-      // keep track of the post's id, so we can redirect to it later
-      createdId: null
+      }
     }
   }
 
@@ -44,9 +41,6 @@ class PostCreate extends Component {
       // then copy the updated field onto that new object
       const editedPost = Object.assign({}, prevState.post, updatedField)
 
-      console.log('updatedField is', updatedField)
-      console.log('editedPost is', editedPost)
-
       // return the state change, of setting the `post` state to its new value of
       // `editedpost`
       return { post: editedPost }
@@ -54,8 +48,8 @@ class PostCreate extends Component {
   }
 
   handleSubmit = event => {
-    // prevent the page from refreshing
     event.preventDefault()
+
     axios({
       url: `${apiUrl}/posts`,
       method: 'POST',
@@ -65,10 +59,14 @@ class PostCreate extends Component {
         'Authorization': `Token token=${this.props.user.token}`
       }
     })
-      // if we succesfully created the post, set the `createdId` state to the id
-      // of the post we got back in the response's data
+      .then(() => this.setState({ post: {
+        body: ''
+      } }))
+      .then(() => {
+        document.querySelector('.tweetBox').value = ''
+      })
       .then(() => indexPosts(this.props.user)
-        .then(res => this.setState({ posts: res.data.posts.reverse() }))
+        .then(res => this.props.setPosts(res.data.posts.reverse()))
         .catch(console.error)
       )
       .catch(console.error)
@@ -79,16 +77,11 @@ class PostCreate extends Component {
     const { post } = this.state
     const { handleChange, handleSubmit } = this
 
-    // when the user hits submit to finish editing the post
-    // if (createdId) {
-    // redirect to the show page (route)
-    // return <Redirect to='/posts' />
-    // }
-
     return (
       <div className="text">
         <form onSubmit={handleSubmit}>
           <input
+            className='tweetBox'
             placeholder='Enter thoughts'
             /* This input's value, will always be post.body */
             value={post.body}

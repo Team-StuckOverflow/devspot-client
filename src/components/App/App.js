@@ -20,8 +20,15 @@ class App extends Component {
 
     this.state = {
       user: null,
-      msgAlerts: []
+      msgAlerts: [],
+      posts: []
     }
+  }
+
+  setPosts = posts => {
+    this.setState({
+      posts: posts
+    })
   }
 
   setUser = user => this.setState({ user })
@@ -33,7 +40,7 @@ class App extends Component {
   }
 
   render () {
-    const { msgAlerts, user } = this.state
+    const { msgAlerts, user, posts } = this.state
 
     return (
       <React.Fragment>
@@ -70,8 +77,8 @@ class App extends Component {
           )} />
           <AuthenticatedRoute exact path='/posts' user={user} render={() => (
             <React.Fragment>
-              <PostCreate user={user}/>
-              <Posts user={user}/>
+              <PostCreate setPosts={this.setPosts} user={user}/>
+              <Posts posts={posts} setPosts={this.setPosts} user={user}/>
             </React.Fragment>
           )}/>
         </main>
