@@ -30,7 +30,7 @@ class Posts extends Component {
         <Container style={postsStyling} className='post-hover pb-5'>
           <Row>
             <Col xs={2}>
-              <img src={post.owner.proPic} width='75' alt="proPic"/>
+              <img src={post.owner.proPic} width='75' alt="proPic" />
             </Col>
             <Col>
               <div style={{ display: 'inline-block' }}><span style={{ fontWeight: 'Bold' }}>{post.owner.firstName} {post.owner.lastName}</span> <span className='username' style={{ color: 'grey' }}>@{post.owner.username}</span></div>
