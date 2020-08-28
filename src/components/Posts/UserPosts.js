@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { Modal, Button, Container, Row, Col, DropdownButton, Dropdown, ButtonGroup, Image } from 'react-bootstrap'
-
 import { indexPosts, deletePost, editPost } from '../../api/post'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
