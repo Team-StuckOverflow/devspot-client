@@ -117,8 +117,8 @@ class Posts extends Component {
         <h2 style={{ textAlign: 'center' }}>Live Feed</h2>
         {posts}
         <Modal centered show={this.state.show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Edit Post</Modal.Title>
+          <Modal.Header className='textCenter' closeButton>
+            <Modal.Title className='textCenter'>Edit Post</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <input type="text" value={editedPost} onChange={handleChange} name='editedPost'></input>
