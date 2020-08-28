@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
-import { Modal, Button, Container, Row, Col, DropdownButton, Dropdown, ButtonGroup } from 'react-bootstrap'
+import { Image, Modal, Button, Container, Row, Col, DropdownButton, Dropdown, ButtonGroup } from 'react-bootstrap'
 import { indexPosts, deletePost, editPost } from '../../api/post'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
@@ -73,15 +73,6 @@ class Posts extends Component {
     this.setState({ [event.target.name]: event.target.value })
   }
 
-  // handleChange = event => {
-  //   event.persist()
-  //   this.setState(prevState => {
-  //     const updatedField = { [event.target.name]: event.target.value }
-  //     const editedPost = Object.assign({}, prevState.editedPost, updatedField)
-  //     return { editedPost: editedPost }
-  //   })
-  // }
-
   render () {
     const { handleClose, handleShow, handleChange, onEditPost, onDeletePost } = this
     const { editedPost } = this.state
@@ -96,7 +87,7 @@ class Posts extends Component {
         <Container style={postsStyling} className='post-hover pb-5 pt-2'>
           <Row>
             <Col xs={2}>
-              <img src={post.owner.proPic} width='75' alt="proPic"/>
+              <Image roundedCircle src={post.owner.proPic} width='75' alt="proPic"/>
             </Col>
             <Col>
               <div style={{ display: 'inline-block' }}><span style={{ fontWeight: 'Bold' }}>{post.owner.firstName} {post.owner.lastName}</span> <span className='username' style={{ color: 'grey' }}>@{post.owner.username}</span></div>
