@@ -1,6 +1,6 @@
 let apiUrl
 const apiUrls = {
-  production: 'https://floating-fjord-11913.herokuapp.com',
+  production: ' https://devspot-api.herokuapp.com',
   development: 'http://localhost:4741'
 }
 
