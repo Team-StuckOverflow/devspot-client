@@ -28,7 +28,7 @@ class Users extends Component {
 
   render () {
     const users = this.state.users.map(user => (
-      <div key={user._id} className="col-3 d-flex align-items-stretch">
+      <div key={user._id} xs={12} md={6} lg={3} xl={2} className="col d-flex align-items-stretch">
         <Card className="card-color" style={{ width: '18rem' }}>
           <Card.Img variant="top" src={user.proPic} />
           <Card.Body>

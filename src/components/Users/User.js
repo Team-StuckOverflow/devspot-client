@@ -45,28 +45,26 @@ class User extends Component {
 
     console.log()
     return (
-      <div>
-        <div className="container" style={profile}>
-          <div className="row">
-            <div className="col-1">
-              <Image src={user.proPic} width="100" height="100" roundedCircle/>
-            </div>
+      <div className="container" style={profile}>
+        <div className="row">
+          <div className="col-1">
+            <Image src={user.proPic} width="100" height="100" roundedCircle/>
           </div>
-          <div className="row">
-            <div className="col-9" style={userInfo}>
-              <h4>{user.firstName} {user.lastName}</h4>
-              <h6>@{user.username}</h6>
-              <h6>Languages: {user.languages}</h6>
-              <h6>Current Position: {user.role}</h6>
-              <h6>Years of Experience: {user.yearsOfExp}</h6>
-              <h6>City: {user.city}</h6>
-              <a style={link} href={user.linkedIn}>LinkedIn</a>
-              <a style={link} href={user.gitHub}>GitHub</a>
-            </div>
+        </div>
+        <div className="row">
+          <div className="col-9" style={userInfo}>
+            <h4>{user.firstName} {user.lastName}</h4>
+            <h6>@{user.username}</h6>
+            <h6>Languages: {user.languages}</h6>
+            <h6>Current Position: {user.role}</h6>
+            <h6>Years of Experience: {user.yearsOfExp}</h6>
+            <h6>City: {user.city}</h6>
+            <a style={link} href={user.linkedIn}>LinkedIn</a>
+            <a style={link} href={user.gitHub}>GitHub</a>
           </div>
-          <div className="row" style={newsFeed}>
-            <UserPosts user={this.props.user} userId={user._id} />
-          </div>
+        </div>
+        <div style={newsFeed}>
+          <UserPosts user={this.props.user} userId={user._id} />
         </div>
       </div>
     )

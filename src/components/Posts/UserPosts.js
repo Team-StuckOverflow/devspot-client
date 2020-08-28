@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-import { Modal, Button, Container, Row, Col, DropdownButton, Dropdown, ButtonGroup } from 'react-bootstrap'
+import { Modal, Button, Container, Row, Col, DropdownButton, Dropdown, ButtonGroup, Image } from 'react-bootstrap'
 import { indexPosts, deletePost, editPost } from '../../api/post'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
@@ -88,7 +88,7 @@ class UserPosts extends Component {
           ? <Container style={postsStyling} className='post-hover pb-5'>
             <Row>
               <Col xs={2}>
-                <img src={post.owner.proPic} width='75' alt="proPic"/>
+                <Image src={post.owner.proPic} width='75' alt="proPic" roundedCircle />
               </Col>
               <Col>
                 <div style={{ display: 'inline-block' }}><span style={{ fontWeight: 'Bold' }}>{post.owner.firstName} {post.owner.lastName}</span> <span className='username' style={{ color: 'grey' }}>@{post.owner.username}</span></div>
