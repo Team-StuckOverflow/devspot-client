@@ -77,9 +77,14 @@ class PostCreate extends Component {
     // destructure post to show in the form below, and createdId to redirect
     const { post } = this.state
     const { handleChange, handleSubmit } = this
+    const tweetBoxStyling = {
+      border: '1px solid gray',
+      width: '600px',
+      color: 'white'
+    }
 
     return (
-      <div className="text">
+      <div style={tweetBoxStyling} className="text">
         <form onSubmit={handleSubmit}>
           <input
             className='tweetBox'
