@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Redirect, Link } from 'react-router-dom'
-
+// import { Redirect } from 'react-router-dom'
+import { indexPosts } from '../../api/post'
 // import the api's url
 import apiUrl from '../../apiConfig'
 
@@ -56,7 +56,6 @@ class PostCreate extends Component {
   handleSubmit = event => {
     // prevent the page from refreshing
     event.preventDefault()
-    console.log(this.props)
     axios({
       url: `${apiUrl}/posts`,
       method: 'POST',
@@ -68,42 +67,41 @@ class PostCreate extends Component {
     })
       // if we succesfully created the post, set the `createdId` state to the id
       // of the post we got back in the response's data
-      .then(res => this.setState({ createdId: res.data.post._id }))
+      .then(() => indexPosts(this.props.user)
+        .then(res => this.setState({ posts: res.data.posts.reverse() }))
+        .catch(console.error)
+      )
       .catch(console.error)
   }
 
   render () {
     // destructure post to show in the form below, and createdId to redirect
-    const { post, createdId } = this.state
+    const { post } = this.state
     const { handleChange, handleSubmit } = this
 
-    // when the user hits submit to finish editing the book
-    if (createdId) {
-      // redirect to the show page (route)
-      return <Redirect to={`/posts/${createdId}`} />
-    }
+    // when the user hits submit to finish editing the post
+    // if (createdId) {
+    // redirect to the show page (route)
+    // return <Redirect to='/posts' />
+    // }
 
     return (
-
-      <form onSubmit={handleSubmit}>
-        <label>Text</label>
-        <input
-          placeholder='Enter thoughts'
-          /* This input's value, will always be post.body */
-          value={post.body}
-          /* We need to add a name prop, so this input will be properly updated
+      <div className="text">
+        <form onSubmit={handleSubmit}>
+          <input
+            placeholder='Enter thoughts'
+            /* This input's value, will always be post.body */
+            value={post.body}
+            /* We need to add a name prop, so this input will be properly updated
         in the future w/ handleChange */
-          name='body'
-          /* Add a change event handler, that will updated our post's state */
-          onChange={handleChange}
-        />
-        <button type='submit'>Submit</button>
-        {/* Link the cancel button to the home page route */}
-        <Link to='/'>
-          <button>Cancel</button>
-        </Link>
-      </form>
-
+            name='body'
+            /* Add a change event handler, that will updated our post's state */
+            onChange={handleChange}
+          />
+          <br /><button type='submit'>TWEET</button>
+          {/* Link the cancel button to the home page route */}
+        </form>
+      </div>
     )
   }
 }

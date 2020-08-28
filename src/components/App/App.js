@@ -68,11 +68,11 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/users/:id' render={() => (
             <User user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/posts' render={() => (
-            <Posts user={user}/>
-          )}/>
-          <AuthenticatedRoute exact path='/post-create' user={user} render={() => (
-            <PostCreate user={user}/>
+          <AuthenticatedRoute exact path='/posts' user={user} render={() => (
+            <React.Fragment>
+              <PostCreate user={user}/>
+              <Posts user={user}/>
+            </React.Fragment>
           )}/>
         </main>
       </React.Fragment>

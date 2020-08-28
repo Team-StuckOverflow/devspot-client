@@ -9,7 +9,6 @@ const authenticatedOptions = (
     <Nav.Link className='navbar' href="#sign-out">Sign Out</Nav.Link>
     <Nav.Link className='navbar' href="#users">Users</Nav.Link>
     <Nav.Link className='navbar' href='#posts'>Show Posts</Nav.Link>
-    <Nav.Link className='navbar' href="#post-create">New Post</Nav.Link>
   </Fragment>
 )
 
