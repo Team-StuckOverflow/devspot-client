@@ -1,10 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
 
 main {
-  background-color: #2C1553;
   color: white;
   width: 100vw;
   height: 100vh;
+}
+
+body {
+  background-color: #2C1553;
 }
 
 #posts-dropdown {
@@ -14,6 +17,8 @@ main {
 #root {
   background-color: #2C1553;
   color: white;
+  width: 100%;
+  height: 100%;
 }
 
 .navbar {
