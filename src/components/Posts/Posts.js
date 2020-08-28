@@ -20,7 +20,8 @@ class Posts extends Component {
 
   componentDidMount () {
     indexPosts(this.props.user)
-      .then(res => this.setState({ posts: res.data.posts.reverse() }))
+      // .then(res => this.setState({ posts: res.data.posts.reverse() }))
+      .then(res => this.props.setPosts(res.data.posts.reverse()))
       .catch(console.error)
   }
 
@@ -28,7 +29,7 @@ class Posts extends Component {
     deletePost(this.props.user, event.target.dataset.postid)
       // After successful delete, call another index request to re-render posts
       .then(() => indexPosts(this.props.user)
-        .then(res => this.setState({ posts: res.data.posts.reverse() }))
+        .then(res => this.props.setPosts(res.data.posts.reverse()))
         .catch(console.error)
       )
       .catch(console.error)
@@ -42,7 +43,7 @@ class Posts extends Component {
     editPost(this.props.user, this.state.currentPostId, this.state.editedPost)
       // After successful update, call another index request to re-render posts
       .then(() => indexPosts(this.props.user)
-        .then(res => this.setState({ posts: res.data.posts.reverse() }))
+        .then(res => this.props.setPosts(res.data.posts.reverse()))
         .catch(console.error)
       )
       .then(() => this.setState({ show: false }))
@@ -82,7 +83,7 @@ class Posts extends Component {
       color: 'white'
     }
 
-    const posts = this.state.posts.map(post => (
+    const posts = this.props.posts.map(post => (
       <React.Fragment key={post._id}>
         <Container style={postsStyling} className='post-hover pb-5 pt-2'>
           <Row>
@@ -117,8 +118,8 @@ class Posts extends Component {
         <h2 style={{ textAlign: 'center' }}>Live Feed</h2>
         {posts}
         <Modal centered show={this.state.show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Edit Post</Modal.Title>
+          <Modal.Header className='textCenter' closeButton>
+            <Modal.Title className='textCenter'>Edit Post</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <input type="text" value={editedPost} onChange={handleChange} name='editedPost'></input>

@@ -38,3 +38,13 @@ body {
 //  border-bottom: 8px solid var(--twitter-background);
 //  padding-right: 10px;
 // }
+
+.modal-content {
+  display: flex;
+  align-content: center;
+  justify: center;
+}
+
+.modal-header {
+  text-align: center;
+}
