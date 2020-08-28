@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect, Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 // import the api's url
 import apiUrl from '../../apiConfig'
@@ -85,33 +85,29 @@ class PostCreate extends Component {
     const { post, createdId } = this.state
     const { handleChange, handleSubmit } = this
 
-    // when the user hits submit to finish editing the book
+    // when the user hits submit to finish editing the post
     if (createdId) {
       // redirect to the show page (route)
       return <Redirect to={`/posts/${createdId}`} />
     }
 
     return (
-
-      <form onSubmit={handleSubmit}>
-        <label>Text</label>
-        <input
-          placeholder='Enter thoughts'
-          /* This input's value, will always be post.body */
-          value={post.body}
-          /* We need to add a name prop, so this input will be properly updated
+      <div className="text">
+        <form onSubmit={handleSubmit}>
+          <input
+            placeholder='Enter thoughts'
+            /* This input's value, will always be post.body */
+            value={post.body}
+            /* We need to add a name prop, so this input will be properly updated
         in the future w/ handleChange */
-          name='body'
-          /* Add a change event handler, that will updated our post's state */
-          onChange={handleChange}
-        />
-        <button type='submit'>Submit</button>
-        {/* Link the cancel button to the home page route */}
-        <Link to='/'>
-          <button>Cancel</button>
-        </Link>
-      </form>
-
+            name='body'
+            /* Add a change event handler, that will updated our post's state */
+            onChange={handleChange}
+          />
+          <br /><button type='submit'>TWEET</button>
+          {/* Link the cancel button to the home page route */}
+        </form>
+      </div>
     )
   }
 }
