@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import { Redirect } from 'react-router-dom'
 import { indexPosts } from '../../api/post'
+
 // import the api's url
 import apiUrl from '../../apiConfig'
 
@@ -16,6 +17,7 @@ class PostCreate extends Component {
       post: {
         // set the default body to empty strings
         body: ''
+
       }
     }
   }
@@ -40,7 +42,6 @@ class PostCreate extends Component {
       // copy all of the post's properties onto the newly created object ({})
       // then copy the updated field onto that new object
       const editedPost = Object.assign({}, prevState.post, updatedField)
-
       // return the state change, of setting the `post` state to its new value of
       // `editedpost`
       return { post: editedPost }
@@ -48,8 +49,8 @@ class PostCreate extends Component {
   }
 
   handleSubmit = event => {
+    // prevent the page from refreshing
     event.preventDefault()
-
     axios({
       url: `${apiUrl}/posts`,
       method: 'POST',
