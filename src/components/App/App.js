@@ -15,7 +15,6 @@ import UpdateProfile from '../Update/UpdateProfile'
 
 import Posts from '../Posts/Posts'
 import PostCreate from '../PostCreate/PostCreate'
-import UpdateProfile from '../Update/UpdateProfile'
 
 class App extends Component {
   constructor () {
