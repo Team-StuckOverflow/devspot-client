@@ -9,7 +9,7 @@ class UpdateProfile extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      user: {
+      userInfo: {
         firstName: '',
         lastName: '',
         city: '',
@@ -20,22 +20,20 @@ class UpdateProfile extends Component {
         role: '',
         gitHub: '',
         linkedIn: '',
-        proPic: '',
-        active: ''
+        proPic: ''
       },
       updated: false
     }
   }
 
-  componentDidMount (req, res, next) {
-    console.log('this.state.user ', this.state.user)
+  componentDidMount () {
     axios({
       url: `${apiUrl}/users/${this.props.user._id}`,
       headers: {
         'Authorization': `Token token=${this.props.user.token}`
       }
     })
-      .then(res => this.setState({ user: res.data.user }))
+      .then(res => this.setState({ userInfo: res.data.user }))
       .catch(console.error)
   }
 
@@ -44,7 +42,7 @@ class UpdateProfile extends Component {
     this.setState(prevState => {
       const updatedField = { [event.target.name]: event.target.value }
       const editedUser = Object.assign({}, prevState.user, updatedField)
-      return { user: editedUser }
+      return { userInfo: editedUser }
     })
   }
 
@@ -53,9 +51,23 @@ class UpdateProfile extends Component {
     axios({
       url: `${apiUrl}/user-info`,
       method: 'PATCH',
-      data: { user: this.state.user },
+      data: {
+        userInfo: {
+          firstName: this.state.userInfo.firstName,
+          lastName: this.state.userInfo.lastName,
+          city: this.state.userInfo.city,
+          state: this.state.userInfo.state,
+          country: this.state.userInfo.country,
+          languages: this.state.userInfo.languages,
+          role: this.state.userInfo.role,
+          yearsOfExp: this.state.userInfo.yearsOfExp,
+          gitHub: this.state.userInfo.gitHub,
+          linkedIn: this.state.userInfo.linkedIn,
+          proPic: this.state.userInfo.proPic
+        }
+      },
       headers: {
-        'Authorization': `Token token=${this.state.user.token}`
+        'Authorization': `Token token=${this.props.user.token}`
       }
     })
       .then(res => this.setState({ updated: true }))
@@ -63,11 +75,11 @@ class UpdateProfile extends Component {
   }
 
   render () {
-    const { firstName, lastName, city, state, languages, role, yearsOfExp, gitHub, linkedIn, proPic, country, updated } = this.state
+    const { firstName, lastName, city, state, languages, role, yearsOfExp, gitHub, linkedIn, proPic, country } = this.state.userInfo
     const { handleChange, handleSubmit } = this
-
+    const { updated } = this.state
     if (updated) {
-      return <Redirect to={`/user/${this.props.user._id}`} />
+      return <Redirect to={`/users/${this.props.user._id}`} />
     }
 
     return (
