@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter, Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { Image, Modal, Button, Container, Row, Col, DropdownButton, Dropdown, ButtonGroup } from 'react-bootstrap'
 import { indexPosts, deletePost, editPost } from '../../api/post'
 import apiUrl from '../../apiConfig'
@@ -83,7 +83,7 @@ class Posts extends Component {
     }
 
     const posts = this.state.posts.map(post => (
-      <Link to={`/posts/${post._id}`} key={post._id}>
+      <React.Fragment key={post._id}>
         <Container style={postsStyling} className='post-hover pb-5 pt-2'>
           <Row>
             <Col xs={2}>
@@ -109,7 +109,7 @@ class Posts extends Component {
             </Col>
           </Row>
         </Container>
-      </Link>
+      </React.Fragment>
     ))
 
     return (
