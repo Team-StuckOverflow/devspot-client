@@ -78,12 +78,12 @@ class UserPosts extends Component {
     const { editedPost } = this.state
     const postsStyling = {
       border: '1px solid gray',
-      width: '600px',
+      width: '100%',
       color: 'white'
     }
 
     const posts = this.state.posts.map(post => (
-      <div key={post._id}>
+      <Container key={post._id}>
         { this.props.userId === post.owner._id
           ? <Container style={postsStyling} className='post-hover pb-5'>
             <Row>
@@ -111,7 +111,7 @@ class UserPosts extends Component {
             </Row>
           </Container>
           : null }
-      </div>
+      </Container>
     ))
 
     return (

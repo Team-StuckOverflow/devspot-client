@@ -63,9 +63,7 @@ class User extends Component {
             <a style={link} href={user.gitHub}>GitHub</a>
           </div>
         </div>
-        <div className="row fluid" style={newsFeed}>
-          <UserPosts user={this.props.user} userId={user._id} />
-        </div>
+        <UserPosts style={newsFeed} user={this.props.user} userId={user._id} />
       </div>
     )
   }
