@@ -84,9 +84,9 @@ class UpdateProfile extends Component {
 
     return (
       <div>
-        <h2>Edit Profile</h2>
         <div className="row">
           <div className="col-sm-10 col-md-8 mx-auto mt-5">
+            <h2>Edit Profile</h2>
             <Form onSubmit={handleSubmit}>
 
               <Form.Group controlId="firstName">
