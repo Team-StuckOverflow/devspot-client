@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { indexPosts } from '../../api/post'
-import { Container, Row, Col, Image } from 'react-bootstrap'
+import { Container, Row, Col, Image, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 // import the api's url
@@ -78,15 +78,24 @@ class PostCreate extends Component {
     // destructure post to show in the form below, and createdId to redirect
     const { post } = this.state
     const { handleChange, handleSubmit } = this
-    const tweetBoxStyling = {
-      border: '1px solid gray',
+    const createPostStyling = {
+      border: '1px solid rgba(255, 255, 255, 0.5)',
       width: '600px',
       color: 'white',
-      borderBottom: '5px solid gray'
+      borderBottom: '3px solid rgba(255, 255, 255, 0.5)'
+    }
+    const tweetBoxStyling = {
+      fontSize: '20px',
+      width: '400px',
+      height: '75px',
+      backgroundColor: '#2C1553',
+      border: 'none',
+      outline: 'none',
+      color: 'white'
     }
 
     return (
-      <Container style={tweetBoxStyling} className="text pb-5 pt-3">
+      <Container style={createPostStyling} className="text pb-5 pt-3">
         <Row>
           <Col xs={2}>
             <Link to={`/users/${this.props.user._id}`}>
@@ -96,8 +105,9 @@ class PostCreate extends Component {
           <Col>
             <form onSubmit={handleSubmit}>
               <input
+                style={tweetBoxStyling}
                 className='tweetBox'
-                placeholder='Enter thoughts'
+                placeholder="What's on your mind?"
                 /* This input's value, will always be post.body */
                 value={post.body}
                 /* We need to add a name prop, so this input will be properly updated
@@ -106,7 +116,7 @@ class PostCreate extends Component {
                 /* Add a change event handler, that will updated our post's state */
                 onChange={handleChange}
               />
-              <br /><button type='submit'>TWEET</button>
+              <br /><Button variant="primary" type='submit'>Tweet</Button>
               {/* Link the cancel button to the home page route */}
             </form>
           </Col>

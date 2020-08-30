@@ -14,6 +14,10 @@ body {
   color: white !important;
 }
 
+::placeholder {
+  color: 	#C8C8C8;
+}
+
 #posts-dropdown {
   float: right;
 }
@@ -27,6 +31,10 @@ body {
 
 .navbar {
   color: white !important;
+}
+
+.navbarBorder {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
 }
 
 .post-hover:hover {

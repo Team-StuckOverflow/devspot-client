@@ -78,7 +78,7 @@ class Posts extends Component {
     const { handleClose, handleShow, handleChange, onEditPost, onDeletePost } = this
     const { editedPost } = this.state
     const postsStyling = {
-      border: '1px solid gray',
+      border: '1px solid rgba(255, 255, 255, 0.5)',
       width: '600px',
       color: 'white'
     }

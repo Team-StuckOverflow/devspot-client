@@ -26,9 +26,13 @@ const unauthenticatedOptions = (
 //   </Fragment>
 // )
 
+// const headerStyling = {
+//   borderBottom: '1px solid rgba(255, 255, 255, 0.5)'
+// }
+
 const Header = ({ user }) => (
-  <Navbar expand="md">
-    <Navbar.Brand className='navbar' href="#posts">
+  <Navbar className='navbarBorder' expand="md">
+    <Navbar.Brand className='navbar' href="#">
       DevSpot
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -57,10 +57,13 @@ class App extends Component {
         ))}
         <main className="container">
           <Route exact path='/' render={() => (
-            <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
+            <React.Fragment>
+              <p style={{ textAlign: 'center', marginTop: '50px' }}>Welcome to DevSpot, the social network for software developers.</p>
+              <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
+            </React.Fragment>
           )} />
 
-          <Route path='/user-info' user={user} render={() => (
+          <AuthenticatedRoute path='/user-info' user={user} render={() => (
             <UpdateProfile msgAlert={this.msgAlert} setUser={this.setUser} user={user} />
           )} />
 
@@ -90,7 +93,7 @@ class App extends Component {
 
           <AuthenticatedRoute exact path='/posts' user={user} render={() => (
             <React.Fragment>
-              <h2 style={{ textAlign: 'center' }}>Live Feed</h2>
+              <h2 className='mt-4' style={{ textAlign: 'center' }}>Live Feed</h2>
               <PostCreate setPosts={this.setPosts} user={user}/>
               <Posts posts={posts} setPosts={this.setPosts} user={user}/>
             </React.Fragment>
