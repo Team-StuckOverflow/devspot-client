@@ -90,6 +90,7 @@ class App extends Component {
 
           <AuthenticatedRoute exact path='/posts' user={user} render={() => (
             <React.Fragment>
+              <h2 style={{ textAlign: 'center' }}>Live Feed</h2>
               <PostCreate setPosts={this.setPosts} user={user}/>
               <Posts posts={posts} setPosts={this.setPosts} user={user}/>
             </React.Fragment>

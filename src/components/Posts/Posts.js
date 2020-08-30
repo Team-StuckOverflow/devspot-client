@@ -115,7 +115,6 @@ class Posts extends Component {
 
     return (
       <div style={{ color: 'white' }}>
-        <h2 style={{ textAlign: 'center' }}>Live Feed</h2>
         {posts}
         <Modal centered show={this.state.show} onHide={handleClose}>
           <Modal.Header className='textCenter' closeButton>

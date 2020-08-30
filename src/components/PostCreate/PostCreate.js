@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-// import { Redirect } from 'react-router-dom'
 import { indexPosts } from '../../api/post'
+import { Container, Row, Col, Image } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 // import the api's url
 import apiUrl from '../../apiConfig'
@@ -80,27 +81,37 @@ class PostCreate extends Component {
     const tweetBoxStyling = {
       border: '1px solid gray',
       width: '600px',
-      color: 'white'
+      color: 'white',
+      borderBottom: '5px solid gray'
     }
 
     return (
-      <div style={tweetBoxStyling} className="text">
-        <form onSubmit={handleSubmit}>
-          <input
-            className='tweetBox'
-            placeholder='Enter thoughts'
-            /* This input's value, will always be post.body */
-            value={post.body}
-            /* We need to add a name prop, so this input will be properly updated
-        in the future w/ handleChange */
-            name='body'
-            /* Add a change event handler, that will updated our post's state */
-            onChange={handleChange}
-          />
-          <br /><button type='submit'>TWEET</button>
-          {/* Link the cancel button to the home page route */}
-        </form>
-      </div>
+      <Container style={tweetBoxStyling} className="text pb-5 pt-3">
+        <Row>
+          <Col xs={2}>
+            <Link to={`/users/${this.props.user._id}`}>
+              <Image roundedCircle src={this.props.user.proPic} width='75' alt="proPic"/>
+            </Link >
+          </Col>
+          <Col>
+            <form onSubmit={handleSubmit}>
+              <input
+                className='tweetBox'
+                placeholder='Enter thoughts'
+                /* This input's value, will always be post.body */
+                value={post.body}
+                /* We need to add a name prop, so this input will be properly updated
+            in the future w/ handleChange */
+                name='body'
+                /* Add a change event handler, that will updated our post's state */
+                onChange={handleChange}
+              />
+              <br /><button type='submit'>TWEET</button>
+              {/* Link the cancel button to the home page route */}
+            </form>
+          </Col>
+        </Row>
+      </Container>
     )
   }
 }
