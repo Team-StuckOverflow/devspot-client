@@ -68,6 +68,7 @@ const SignUpForm = ({ handleChange, cancelPath, email, password, passwordConfirm
         </Form.Group>
 
         <Form.Group controlId="state">
+          <h6>State</h6>
           <select title="US States" value={state} onChange={handleChange}
             name="state"
             required>
