@@ -126,6 +126,7 @@ class UpdateProfile extends Component {
               </Form.Group>
 
               <Form.Group controlId="state">
+                <h6>State</h6>
                 <select title="US States" value={state} onChange={handleChange}
                   name="state"
                   required>
