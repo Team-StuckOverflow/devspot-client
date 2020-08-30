@@ -31,7 +31,7 @@ const unauthenticatedOptions = (
 // }
 
 const Header = ({ user }) => (
-  <Navbar className='navbarBorder' expand="md">
+  <Navbar sticky='top' variant='dark' className='navbarBorder' expand="md">
     <Navbar.Brand className='navbar' href="#">
       DevSpot
     </Navbar.Brand>
