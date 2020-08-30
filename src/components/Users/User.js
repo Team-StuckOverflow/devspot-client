@@ -59,8 +59,8 @@ class User extends Component {
             <h6>Current Position: {user.role}</h6>
             <h6>Years of Experience: {user.yearsOfExp}</h6>
             <h6>City: {user.city}</h6>
-            <a style={link} href={user.linkedIn}>LinkedIn</a>
-            <a style={link} href={user.gitHub}>GitHub</a>
+            <a style={link} href={user.linkedIn} target="blank">LinkedIn</a>
+            <a style={link} href={user.gitHub} target="blank">GitHub</a>
           </div>
         </div>
         <UserPosts style={newsFeed} user={this.props.user} userId={user._id} />
