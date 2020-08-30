@@ -89,7 +89,9 @@ class Posts extends Component {
           <Row>
             <Col xs={2}>
               <Link to={`/users/${post.owner._id}`}>
-                <Image roundedCircle src={post.owner.proPic} width='75' alt="proPic"/>
+                <div className='proPicContainer'>
+                  <Image className='proPic' src={post.owner.proPic} alt="proPic"/>
+                </div>
               </Link>
             </Col>
             <Col>

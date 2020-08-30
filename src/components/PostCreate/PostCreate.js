@@ -103,7 +103,7 @@ class PostCreate extends Component {
             </Link >
           </Col>
           <Col>
-            <form onSubmit={handleSubmit}>
+            <form className='tweetForm' onSubmit={handleSubmit}>
               <input
                 style={tweetBoxStyling}
                 className='tweetBox'
@@ -116,7 +116,7 @@ class PostCreate extends Component {
                 /* Add a change event handler, that will updated our post's state */
                 onChange={handleChange}
               />
-              <br /><Button variant="primary" type='submit'>Tweet</Button>
+              <br /><Button className="tweetButton" variant="primary" type='submit'>Tweet</Button>
               {/* Link the cancel button to the home page route */}
             </form>
           </Col>

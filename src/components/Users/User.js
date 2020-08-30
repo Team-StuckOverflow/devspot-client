@@ -43,9 +43,8 @@ class User extends Component {
   render () {
     const { user } = this.state
 
-    console.log()
     return (
-      <div className="container" style={profile}>
+      <div className="container mt-5" style={profile}>
         <div className="row">
           <div className="col-1">
             <Image src={user.proPic} width="100" height="100" roundedCircle/>
@@ -59,8 +58,8 @@ class User extends Component {
             <h6>Current Position: {user.role}</h6>
             <h6>Years of Experience: {user.yearsOfExp}</h6>
             <h6>City: {user.city}</h6>
-            <a style={link} href={user.linkedIn} target="blank">LinkedIn</a>
-            <a style={link} href={user.gitHub} target="blank">GitHub</a>
+            <a style={link} href={user.linkedIn} target='_blank' rel='noopener noreferrer'>LinkedIn</a>
+            <a style={link} href={user.gitHub} target="_blank" rel='noopener noreferrer'>GitHub</a>
           </div>
         </div>
         <UserPosts style={newsFeed} user={this.props.user} userId={user._id} />

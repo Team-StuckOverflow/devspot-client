@@ -58,8 +58,7 @@ class App extends Component {
         <main className="container">
           <Route exact path='/' render={() => (
             <React.Fragment>
-              <p style={{ textAlign: 'center', marginTop: '50px' }}>Welcome to DevSpot, the social network for software developers.</p>
-              <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
+              <p style={{ textAlign: 'center', marginTop: '50px' }}>Welcome to <span style={{ color: '#FDB927' }}>DevSpot</span>, the social network for software developers.</p>
             </React.Fragment>
           )} />
 
@@ -93,7 +92,7 @@ class App extends Component {
 
           <AuthenticatedRoute exact path='/posts' user={user} render={() => (
             <React.Fragment>
-              <h2 className='mt-4' style={{ textAlign: 'center' }}>Live Feed</h2>
+              <h3 className='mt-5' style={{ textAlign: 'center' }}>Live Feed</h3>
               <PostCreate setPosts={this.setPosts} user={user}/>
               <Posts posts={posts} setPosts={this.setPosts} user={user}/>
             </React.Fragment>
