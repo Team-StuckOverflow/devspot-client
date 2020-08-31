@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 const SignUpForm = ({ handleChange, cancelPath, email, password, passwordConfirmation, firstName, lastName, username, city, state, languages, role, yearsOfExp, gitHub, linkedIn, proPic, country, handleSubmit }) => (
   <div className="row">
     <div className="col-sm-10 col-md-8 mx-auto mt-5">
-      <h3>Sign Up</h3>
+      <h3 style={{ textAlign: 'center' }} className='mb-4'>Sign Up</h3>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="email">
           <Form.Label>Email address</Form.Label>
@@ -68,7 +68,6 @@ const SignUpForm = ({ handleChange, cancelPath, email, password, passwordConfirm
         </Form.Group>
 
         <Form.Group controlId="state">
-          <h6>State</h6>
           <select title="US States" value={state} onChange={handleChange}
             name="state"
             required>
