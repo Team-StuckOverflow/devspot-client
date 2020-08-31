@@ -51,5 +51,4 @@ DevSpot allows users to also browse other user profiles and see their profile pi
 Some of the features of future iterations have been mentioned already, including activation and deactivation of user accounts by toggling the `active` boolean property in the `User` model. Another one is allowing users to change their unique `username` (maybe limit this to once a week? once a month? or maybe unlimited?). For `posts`, the team wants to include `comments` as a subdocument as well a `likes` counter. In addition, profile pictures are simply stored as links in the database and rendered as img elements in the DOM. A future iteration of the app would support image upload of profile pictures as well picture uploads with posts using AWS.
 
 ### Entity Relationship Diagram (ERD)
-![Wire Frames](https://imgur.com/a/RZdx9Pw)
-![ERD](https://i.imgur.com/0gt1boj.jpg)
+[Wire Frames](https://imgur.com/a/RZdx9Pw)
