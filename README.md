@@ -1,6 +1,6 @@
 # DevSpot Client
 
-DevSpot is written by a small team of four developers using React, React-Bootstrap, HTML, and CSS. There are two main resources in the backend that the client connects to: `Users` and `Posts`. Both of these resources are modelled using Mongoose and stored as collections of documents in a non-relational database (MongoDB). Supported user features include sign in, sign up, creating a post, seeing all posts, seeing all users, seeing other people's posts, sign out, change password and update profile (routes can be found in the API repo). Token authentication is incorporated into the app with the help of crypto (to generate the tokens) and Passport (authentication middleware used with Express). The team wrote routes for creating, reading, updating and deleting (CRUD) `Posts` with Express. Additionally, there were routes for creating, signing in to, and updating `User` profiles.
+DevSpot is built by a small team of four developers using React, React-Bootstrap, HTML, and CSS. There are two main resources in the backend that the client connects to: `Users` and `Posts`. Both of these resources are modelled using Mongoose and stored as collections of documents in a non-relational database (MongoDB). Supported user features include sign in, sign up, creating a post, seeing all posts, seeing all users, seeing other people's posts, sign out, change password and update profile (routes can be found in the API repo). Token authentication is incorporated into the app with the help of crypto (to generate the tokens) and Passport (authentication middleware used with Express). The team wrote routes for creating, reading, updating and deleting (CRUD) `Posts` with Express. Additionally, there were routes for creating, signing in to, and updating `User` profiles.
 
 ## Team StuckOverflow - Team Members
 
@@ -50,5 +50,5 @@ DevSpot allows users to also browse other user profiles and see their profile pi
 
 Some of the features of future iterations have been mentioned already, including activation and deactivation of user accounts by toggling the `active` boolean property in the `User` model. Another one is allowing users to change their unique `username` (maybe limit this to once a week? once a month? or maybe unlimited?). For `posts`, the team wants to include `comments` as a subdocument as well a `likes` counter. In addition, profile pictures are simply stored as links in the database and rendered as img elements in the DOM. A future iteration of the app would support image upload of profile pictures as well picture uploads with posts using AWS.
 
-### Entity Relationship Diagram (ERD)
+### Wire Frame Planning
 [Wire Frames](https://imgur.com/a/RZdx9Pw)
