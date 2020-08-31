@@ -78,7 +78,7 @@ class UserPosts extends Component {
     const { editedPost } = this.state
     const postsStyling = {
       border: '1px solid rgba(255, 255, 255, 0.5)',
-      width: '100%',
+      width: '65%',
       color: 'white'
     }
 
