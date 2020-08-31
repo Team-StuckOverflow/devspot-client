@@ -71,6 +71,7 @@ const SignUpForm = ({ handleChange, cancelPath, email, password, passwordConfirm
           <select title="US States" value={state} onChange={handleChange}
             name="state"
             required>
+            <h6>State</h6>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
             <option value="AZ">Arizona</option>
