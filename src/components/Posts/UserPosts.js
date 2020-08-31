@@ -77,18 +77,20 @@ class UserPosts extends Component {
     const { handleClose, handleShow, handleChange, onEditPost, onDeletePost } = this
     const { editedPost } = this.state
     const postsStyling = {
-      border: '1px solid gray',
-      width: '600px',
+      border: '1px solid rgba(255, 255, 255, 0.5)',
+      width: '100%',
       color: 'white'
     }
 
     const posts = this.state.posts.map(post => (
-      <div key={post._id}>
+      <Container key={post._id}>
         { this.props.userId === post.owner._id
           ? <Container style={postsStyling} className='post-hover pb-5'>
             <Row>
               <Col xs={2}>
-                <Image src={post.owner.proPic} width='75' alt="proPic" roundedCircle />
+                <div className='proPicContainer'>
+                  <Image className='proPic' src={post.owner.proPic} alt="proPic"/>
+                </div>
               </Col>
               <Col>
                 <div style={{ display: 'inline-block' }}><span style={{ fontWeight: 'Bold' }}>{post.owner.firstName} {post.owner.lastName}</span> <span className='username' style={{ color: 'grey' }}>@{post.owner.username}</span></div>
@@ -111,12 +113,12 @@ class UserPosts extends Component {
             </Row>
           </Container>
           : null }
-      </div>
+      </Container>
     ))
 
     return (
       <div style={{ color: 'white' }}>
-        <h2 style={{ textAlign: 'center' }}>Live Feed</h2>
+        <h3 style={{ textAlign: 'center' }}>Live Feed</h3>
         {posts}
         <Modal centered show={this.state.show} onHide={handleClose}>
           <Modal.Header closeButton>

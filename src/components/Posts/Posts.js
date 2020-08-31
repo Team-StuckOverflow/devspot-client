@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import { Image, Modal, Button, Container, Row, Col, DropdownButton, Dropdown, ButtonGroup } from 'react-bootstrap'
 import { indexPosts, deletePost, editPost } from '../../api/post'
 import apiUrl from '../../apiConfig'
@@ -78,7 +78,7 @@ class Posts extends Component {
     const { handleClose, handleShow, handleChange, onEditPost, onDeletePost } = this
     const { editedPost } = this.state
     const postsStyling = {
-      border: '1px solid gray',
+      border: '1px solid rgba(255, 255, 255, 0.5)',
       width: '600px',
       color: 'white'
     }
@@ -88,10 +88,16 @@ class Posts extends Component {
         <Container style={postsStyling} className='post-hover pb-5 pt-2'>
           <Row>
             <Col xs={2}>
-              <Image roundedCircle src={post.owner.proPic} width='75' alt="proPic"/>
+              <Link to={`/users/${post.owner._id}`}>
+                <div className='proPicContainer'>
+                  <Image className='proPic' src={post.owner.proPic} alt="proPic"/>
+                </div>
+              </Link>
             </Col>
             <Col>
-              <div style={{ display: 'inline-block' }}><span style={{ fontWeight: 'Bold' }}>{post.owner.firstName} {post.owner.lastName}</span> <span className='username' style={{ color: 'grey' }}>@{post.owner.username}</span></div>
+              <Link to={`/users/${post.owner._id}`}>
+                <div style={{ display: 'inline-block' }}><span style={{ fontWeight: 'Bold' }} className='name'>{post.owner.firstName} {post.owner.lastName}</span> <span className='username' style={{ color: 'grey' }}>@{post.owner.username}</span></div>
+              </Link>
               { this.props.user._id === post.owner._id
                 ? <div style={{ display: 'inline-block', float: 'right' }}>
                   <DropdownButton
@@ -115,7 +121,6 @@ class Posts extends Component {
 
     return (
       <div style={{ color: 'white' }}>
-        <h2 style={{ textAlign: 'center' }}>Live Feed</h2>
         {posts}
         <Modal centered show={this.state.show} onHide={handleClose}>
           <Modal.Header className='textCenter' closeButton>

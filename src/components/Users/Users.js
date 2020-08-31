@@ -51,7 +51,7 @@ class Users extends Component {
 
     return (
       <div>
-        <h5>Users</h5>
+        <h3 style={{ textAlign: 'center' }} className='mt-5 mb-4'>Users</h3>
         <div style={userCard} className="container">
           <div style={userCard} className="row">
             {users}
