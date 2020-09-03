@@ -35,10 +35,6 @@ class UserPosts extends Component {
   }
 
   onEditPost = event => {
-    console.log('User object: ', this.props.user)
-    console.log('Post ID: ', this.state.currentPostId)
-    console.log('Edited post ', this.state.editedPost)
-
     editPost(this.props.user, this.state.currentPostId, this.state.editedPost)
       // After successful update, call another index request to re-render posts
       .then(() => indexPosts(this.props.user)
@@ -51,7 +47,6 @@ class UserPosts extends Component {
 
   // Trigger to show modal and autopopulates text field with contents of current post
   handleShow = event => {
-    console.log('this is the post ID: ', event.target.dataset.postid)
     this.setState({ currentPostId: event.target.dataset.postid })
     axios({
       url: apiUrl + '/posts/' + event.target.dataset.postid,
